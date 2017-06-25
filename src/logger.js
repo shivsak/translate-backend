@@ -8,7 +8,7 @@ var logger = {
             if (errorResponse.hasOwnProperty('statusCode')) console.log(colors.red('[ERROR]: ' + errorResponse.statusCode + ' Error'));
             if (errorResponse.hasOwnProperty('body')) console.log('[ERROR]: ' + errorResponse.body);
         }
-        // console.log(errorResponse);
+        console.log(errorResponse);
         console.log('****** END LOGGING ERROR *****\n\n\n');
     },
 

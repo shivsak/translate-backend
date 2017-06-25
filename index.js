@@ -3,6 +3,7 @@ var app = express();
 const bodyParser = require('body-parser');
 const translate = require('google-translate-api');
 const errorHandler = require('./src/errorHandler');
+const logger = require('./src/logger');
 
 /** bodyParser.urlencoded(options)
  * Parses the text as URL encoded data (which is how browsers tend to send form data from regular forms set to POST)
@@ -41,7 +42,8 @@ app.post('/translate/:to_lang', function (req, resp) {
                     });
                 }, function (err) {
                     // failureFn
-                    resp.status(400).json(errorHandler.getErrorJson(err.message, err));
+                    logger.logError(err, "Unable to translate text");
+                    resp.status(400).json(errorHandler.getErrorJson("Unable to translate your text", err));
                 });
 
     }
