@@ -28,6 +28,11 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
+app.get('/languages', function(request, response) {
+    var languages = translate.languages;
+    response.json(languages)
+});
+
 app.post('/translate/:to_lang', function (req, resp) {
     var toLang = req.params.to_lang;
     if (req.body.hasOwnProperty('text') && req.body.text.length > 0) {
