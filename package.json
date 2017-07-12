@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A translate api",
   "engines": {
-    "node": "6.10.2"
+    "node": "6.11.1"
   },
   "main": "index.js",
   "scripts": {
